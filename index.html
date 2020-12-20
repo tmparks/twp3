@@ -7,7 +7,8 @@
   <title>Family</title>
   <style type="text/css">
   body {
-    margin: 32px;
+    margin: 0px;
+    padding: 0px;
     color: white;
     background-color: black;
     font-size: xx-large;
@@ -18,14 +19,47 @@
     text-decoration: none;
   }
   .tile {
-    margin: 32px;
+    margin: 24px;
     float: left;
     text-align: center;
   }
   img {
     border-radius: 16px;
+    width: 208px;
+    height: 208px;
+  }
+  video {
+    border-radius: 16px;
+    margin: 24px;
+    background: white;
+    width: 976px;
+    height: 549px;
   }
   </style>
+  <script type="text/javascript">
+  function doLoad(element) {
+    element.beginTime = 15725; // 15725
+    element.endTime = 16797; // 15725 + 1072
+    element.currentTime = element.beginTime;
+    return true;
+  }
+  function doClick(element) {
+    if (element.paused) {
+      element.play();
+    }
+    else {
+      element.pause();
+    }
+    return true;
+  }
+  function doUpdate(element) {
+    if (element.currentTime >= element.endTime) {
+      element.pause();
+      element.currentTime = element.beginTime;
+    }
+    return true;
+  }
+  </script>
 </head>
 <body>
   <div class="tile"><a href="facetime:martha.b.parks@gmail.com"><img src="image/martha.jpg"/><br>Call Martha</a></div>
@@ -34,5 +68,9 @@
   <div class="tile"><a href="facetime:tmparks@yahoo.com"><img src="image/tom.jpg"/><br>Call Tom</a></div>
   <div class="tile"><a href="facetime:carolparks116@comcast.net"><img src="image/carol.jpg"/><br>Call Carol</a></div>
   <div class="tile"><a href="https://colgate.zoom.us/j/94042790571"><img src="image/ZPLogo.png"/><br>Zoom Call</a></div>
+  <video src="https://images-assets.nasa.gov/video/KSC-20200530-VP-CDC01-0001-SpaceX_Demo-2_Live_Launch_Coverage_Second_Attempt/KSC-20200530-VP-CDC01-0001-SpaceX_Demo-2_Live_Launch_Coverage_Second_Attempt~medium.mp4#t=15725"
+    playsinline onloadeddata="return doLoad(this);" onclick="return doClick(this);" ontimeupdate="return doUpdate(this);">
+    This browser does not support HTML5 videos.
+  </video>
 </body>
 </html>
