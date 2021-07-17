@@ -1,5 +1,3 @@
-<?php if (is_super_admin()) : ?>
-<?php wp_footer(); ?>
-<?php endif; ?>
+<?php if (is_super_admin()) wp_footer(); ?>
 </body>
 </html>
