@@ -1,4 +1,4 @@
-<?php ?>
+<?php if ( ! is_user_logged_in()) auth_redirect(); ?>
 <html <?php language_attributes(); ?>>
 <head>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -6,7 +6,7 @@
 <meta name="viewport" content = "width=1024,user-scalable=no">
 <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<title><?php wp_title( '|', true, 'right' );?></title>
+<title><?php wp_title( '|', true, 'right' ); bloginfo('title'); ?></title>
 <link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri()); ?>" type="text/css" />
 <?php if (is_super_admin()) : ?>
 <?php wp_head(); ?>
