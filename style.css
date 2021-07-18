@@ -19,21 +19,21 @@ body {
   font-size: xx-large;
   font-family: Georgia,serif;
 }
-:link {
-  color: white;
-  text-decoration: none;
-}
 .tile {
   margin: 24px;
   float: left;
   text-align: center;
 }
-img {
+.tile :link {
+  color: white;
+  text-decoration: none;
+}
+.tile img {
   border-radius: 16px;
   width: 208px;
   height: 208px;
 }
-video {
+.tile video {
   border-radius: 16px;
   margin: 24px;
   background: white;
